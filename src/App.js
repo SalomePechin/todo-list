@@ -31,14 +31,14 @@ function App() {
       <header className="App-header">
         <h1 className="App-title">Todo List App</h1>
       </header>
-
-      <input type="text" placeholder="Nom de la tâche" value={name} onChange={(e) => setName(e.target.value)} /><br /><br />
-      <input type="text" placeholder="Description" value={desc} onChange={(e) => setDesc(e.target.value)} /><br /><br />
-      <input type="date" placeholder="Date limite" value={date} onChange={(e) => setDate(e.target.value)} /><br /><br />
-      <button type="button" onClick={addList}>
-        Créer tâche
-      </button>
-
+      <div className="NewTaskInput">
+        <input type="text" placeholder="Nom de la tâche" value={name} onChange={(e) => setName(e.target.value)} /><br /><br />
+        <input type="text" placeholder="Description" value={desc} onChange={(e) => setDesc(e.target.value)} /><br /><br />
+        <input type="date" placeholder="Date limite" value={date} onChange={(e) => setDate(e.target.value)} /><br /><br />
+        <button type="button" onClick={addList}>
+          Créer tâche
+        </button>
+      </div>
       <TaskList list={list} />
 
     </div>

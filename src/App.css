@@ -1,6 +1,5 @@
 .App {
   height: 100vh;
-  text-align: center;
   color: white;
   background-color: #282c34;
 }
@@ -27,4 +26,8 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.NewTaskInput {
+  text-align: center;
 }

@@ -7,8 +7,8 @@ function Task({ task }) {
         <div className="Task">
             <li>
                 <div>{task.id}</div>
-                <div>{task.name}</div>
-                <div>{task.desc}</div>
+                <h1>{task.name}</h1>
+                <p>{task.desc}</p>
                 <div>{task.date}</div>
             </li>
         </div>

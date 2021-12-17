@@ -1,7 +1,6 @@
 import './App.css';
 import react from 'react';
 import TaskList from './components/TaskList';
-import Task from './components/Task';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -13,17 +12,20 @@ function App() {
   const [name, setName] = useState('');
   const [desc, setDesc] = useState('');
   const [date, setDate] = useState('');
+  const [value, setValue] = useState('');
 
-  function addList() {
-    if (name != '') {
+  function handleCreate(event) {
+    if (name && desc && date) {
       const newList = list.concat({ nameid: uuidv4(), name, desc, date });
       setList(newList);
     } else {
-      alert('Veuillez entrer un autre titre pour votre tâche.');
+      alert('Veuillez renseigner tous les champs.');
     }
     setName('');
     setDesc('');
     setDate('');
+
+    event.preventDefault();
   }
 
   return (
@@ -31,14 +33,14 @@ function App() {
       <header className="App-header">
         <h1 className="App-title">Todo List App</h1>
       </header>
-      <div className="NewTaskInput">
+      <form onSubmit={handleCreate} className="NewTaskInput">
         <input type="text" placeholder="Nom de la tâche" value={name} onChange={(e) => setName(e.target.value)} /><br /><br />
         <input type="text" placeholder="Description" value={desc} onChange={(e) => setDesc(e.target.value)} /><br /><br />
         <input type="date" placeholder="Date limite" value={date} onChange={(e) => setDate(e.target.value)} /><br /><br />
-        <button type="button" onClick={addList}>
+        <button type="submit">
           Créer tâche
         </button>
-      </div>
+      </form>
       <TaskList list={list} />
 
     </div>

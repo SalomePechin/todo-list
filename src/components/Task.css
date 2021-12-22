@@ -1,4 +1,4 @@
-div.Task {
+.Task {
     /*display: inline-block;
     min-height: 5vh;
     min-width: 5vw;
@@ -9,7 +9,11 @@ div.Task {
     height: auto;
     padding: 0em 1.5em 1.5em 1.5em;
     word-wrap: break-word;
-    list-style: none;
     border: 1em solid #282c34;
     background-color: #4a3958;
+    cursor: pointer;
+}
+
+.done {
+    opacity: 0.5;
 }

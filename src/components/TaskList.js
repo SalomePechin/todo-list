@@ -1,18 +1,16 @@
 import './List.css';
 import React from "react";
-import { useState } from 'react';
 import Task from './Task';
-import { filterItems } from '@babel/helper-compilation-targets';
 
-function TaskList({ list }) {
+function TaskList({ list, handleRemove  }) {
 
     return (
         <div className="TaskList">
-            <ul>
-                {(list || []).map(task => (
-                    <Task key={task.id} task={task} />
-                ))}
-            </ul>
+            {(list || []).map(task => {
+                return (
+                    <Task key={task.id} task={task} handleRemove={handleRemove} />
+                )
+            })}
         </div>
     );
 }
